@@ -1,25 +1,33 @@
 
 #Funciones con *args y **kwargs
 
-# def fun1(*args):
-#     return print(sum(args)*0.05)
+"""def suma(*args):
+    resultado = 0
+    for numero in args:
+        resultado += numero
+    return resultado
 
-# fun1(40,50,760)
+resultado = suma(1, 2, 3, 4)
+print(resultado)"""
+# Salida: 10
 
-# def fun2(**kwargs):
-#     if 'fruit' in kwargs:
-#         print('La fruta que escogi es: {}'.format(kwargs['fruit']))
-#     else: 
-#         print('No hay fruta')
+"""def detalles(**kwargs):
+    for clave, valor in kwargs.items():
+        print(f"{clave}: {valor}")
 
-# fun2(fruit = 'mango', vegetal = 'zanahoria')
+detalles(nombre="Juan", edad=30, ciudad="Ejemplo")"""
 
-# def fun3(*args, **kwargs):
-#     print(args)
-#     print(kwargs)
-#     print("Me gustaria {} {}".format(args[0], kwargs["comida"]))
+# Salida:
+# nombre: Juan
+# edad: 30
+# ciudad: Ejemplo
 
-# fun3(12, 23, 34, comida="Ensalada", animal="gato")
+"""def fun3(*args, **kwargs):
+    print(args)
+    print(kwargs)
+    print("Me gustaria {} {}".format(args[0], kwargs["comida"]))
+
+fun3(12, 23, 34, comida="Ensalada", animal="gato")"""
 
 #Funciones Lambda
 
@@ -38,3 +46,12 @@ print(f'Lista de numeros: {segunda_lista}')
 lista_filtro = list(filter(lambda num: num%2 == 0, segunda_lista))
 
 print(f'Lista con filtro para conocer los numeros pares: {lista_filtro}')
+
+personas = [
+    {"nombre": "Juan", "edad": 30},
+    {"nombre": "Ana", "edad": 25},
+    {"nombre": "María", "edad": 35}
+]
+
+personas_ordenadas = sorted(personas, key=lambda x: x["edad"])
+print(personas_ordenadas)
